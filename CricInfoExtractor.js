@@ -29,7 +29,6 @@ responceKaPromise.then(function(responce){
 
     for(let i = 0; i < matchScoreDiv.length; i++){
         let match = {
-
         };
 
         let nameps = matchScoreDiv[i].querySelectorAll("div.name-detail > p.name");
@@ -53,17 +52,13 @@ responceKaPromise.then(function(responce){
             match.t1s = ""
         }
 
-     
-
         let spanResult = matchScoreDiv[i].querySelector("div.status-text > span")
         match.result = spanResult.textContent; 
 
         matches.push(match);
        
         let matchesJson = JSON.stringify(matches);
-        fs.writeFileSync("matches.json",matchesJson,"utf-8");
-
-       
+        fs.writeFileSync("matches.json",matchesJson,"utf-8");      
 
     }
 
